@@ -1,30 +1,38 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
   <div class="container-fluid">
-    <span class="navbar-brand">{{ title }}</span>
+    <span class="navbar-brand">
+      {{ title_items.name }}<i class="{{ title_items.icon }}" id="icon"></i>
+    </span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <!-- GitHub Repository -->
+        <!-- Codebase -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            GitHub Repository
+            <i class="{{ codebase_items.icon }}" id="icon"></i>{{ codebase_items.title }} 
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="https://github.com/kjeshang/kunal-maven-analytics-data-projects/tree/main" target="_blank">Web Application</a></li>
-            <li><a class="dropdown-item" href="https://github.com/kjeshang/KunalMavenAnalyticsDataPlayground/tree/main" target="_blank">Data Analysis</a></li>
+            <li *ngFor="let item of codebase_items.items">
+              <a class="dropdown-item" href="{{ item.link }}" target="_blank">{{ item.name }}</a>
+            </li>
           </ul>
         <!-- Maven Analytics -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Maven Analytics
+            <i class="{{ mavenAnalytics_items.icon }}" id="icon"></i>{{ mavenAnalytics_items.title }}
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="https://www.mavenanalytics.io/">Home Page</a></li>
-            <li><a class="dropdown-item" href="https://www.mavenanalytics.io/data-playground">Data Playground</a></li>
+            <li *ngFor="let item of mavenAnalytics_items.items">
+              <a class="dropdown-item" href="{{ item.link }}">{{ item.name }}</a>
+            </li>
           </ul>
         </li>
+        <!-- More -->
+        <div>
+            <app-offcanvas></app-offcanvas>
+        </div>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" (input)="onSearch($event)">
@@ -68,3 +76,5 @@
     </div>
   </div>
 </div>
+
+<app-footer></app-footer>

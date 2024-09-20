@@ -1,0 +1,15 @@
+<li class="nav-item nav-fill dropdown">
+    <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        More
+    </a>
+    <ul class="dropdown-menu">
+        <p class="text-center">{{ explanation }}</p>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action" *ngFor="let item of list_group_items">
+                <a href="{{ item.link }}" target="_blank">
+                    <i class="{{ item.icon }}" id="icon"></i>{{ item.name }}
+                </a>
+            </li>
+        </ul>
+    </ul>
+  </li>

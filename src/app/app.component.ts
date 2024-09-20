@@ -1,49 +1,64 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import * as data from '../assets/data.json';
+import { OffcanvasComponent } from './components/offcanvas/offcanvas.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, OffcanvasComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+  
   // Variables -----------------------------------------------
-  title = "Kunal Maven Analytics Data Projects";
+  
+  title_items = {
+    "name":"Kunal Maven Analytics Data Projects",
+    "icon":"bi bi-bar-chart"
+  };
+
+  codebase_items = {
+    "title":"Codebase",
+    "icon":"bi bi-code-square",
+    "items":[
+      {
+        "name":"Web Application", 
+        "link":"https://github.com/kjeshang/kunal-maven-analytics-data-projects/tree/main"
+      },
+      {
+        "name":"Data Analysis",
+        "link":"https://github.com/kjeshang/KunalMavenAnalyticsDataPlayground/tree/main"
+      }
+    ]
+  };
+
+  mavenAnalytics_items = {
+    "title":"Maven Analytics",
+    "icon":"bi bi-database",
+    "items":[
+      {
+        "name":"Home Page",
+        "link":"https://www.mavenanalytics.io/"
+      },
+      {
+        "name":"Data Playground",
+        "link":"https://www.mavenanalytics.io/data-playground"
+      }
+    ]
+  };
   
   searchTerm: string = '';
 
   // List Variables ------------------------------------------------------------
 
-  items: any[] = [
-    {
-      name:"Inc 5000 Companies",
-      description:"Dataset containing information about each company on the 2019 INC 5000 list.",
-      logo:"https://github.com/kjeshang/KunalMavenAnalyticsDataPlayground/blob/main/INC_5000_Companies/INC_5000_Companies_Logo.jpg?raw=true",
-      project_link:"https://github.com/kjeshang/KunalMavenAnalyticsDataPlayground/tree/main/INC_5000_Companies",
-      tags:["Geospatial","Finance"],
-      data_structure:"Single table",
-      num_records:5000,
-      num_fields:14,
-      date_added:"2020-09-09"
-    },
-    {
-      name:"Movie Ratings",
-      description:"Ratings and reviews for 15,000+ movies reviewed by Rotten Tomatoes.",
-      logo:"https://github.com/kjeshang/KunalMavenAnalyticsDataPlayground/blob/main/Movie_Ratings/Logo.png?raw=true",
-      project_link:"https://github.com/kjeshang/KunalMavenAnalyticsDataPlayground/tree/main/Movie_Ratings",
-      tags:["Entertainment"],
-      data_structure:"Single table",
-      num_records:16638,
-      num_fields:17,
-      date_added:"2020-09-09"
-    }
-  ];
+  items: any[] = (data as any).default;
 
   filteredItems: any[] = [];
-  
+
   // Functions -----------------------------------------------------------------
   
   ngOnInit(): void {
@@ -63,4 +78,5 @@ export class AppComponent implements OnInit {
         item.description.toLowerCase().includes(lowerCaseTerm)
       ) : this.items;
   }
+
 }
