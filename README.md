@@ -6,11 +6,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 |Description|Image|
 |--|--|
-|Whole Page||
-|Codebase Menu||
-|Maven Analytics Menu||
-|More Menu||
-|Filtered Page||
+|Whole Page|![Whole Page](https://raw.githubusercontent.com/kjeshang/kunal-maven-analytics-data-projects/refs/heads/main/Screenshots/1%20-%20Screenshot%20(March%202026).png)|
+|Codebase Menu|![Codebase Menu](https://github.com/kjeshang/kunal-maven-analytics-data-projects/blob/main/Screenshots/2-%20Codebase%20(March%202026).png?raw=true)|
+|Maven Analytics Menu|![Maven Analytics Menu](https://raw.githubusercontent.com/kjeshang/kunal-maven-analytics-data-projects/refs/heads/main/Screenshots/3%20-%20Maven%20Analytics%20(March%202026).png)|
+|More Menu|![More Menu](https://raw.githubusercontent.com/kjeshang/kunal-maven-analytics-data-projects/refs/heads/main/Screenshots/4%20-%20More%20(March%202026).png)|
+|Filtered Page|![Filtered Page](https://raw.githubusercontent.com/kjeshang/kunal-maven-analytics-data-projects/refs/heads/main/Screenshots/5%20-%20Screenshot%20Filter%20(March%202026).png)|
 
 ## Development server
 
